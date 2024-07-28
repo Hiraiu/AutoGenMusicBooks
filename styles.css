@@ -30,6 +30,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
@@ -39,11 +40,21 @@ nav a {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
+    font-size: 1em;
 }
 
 nav a:hover {
     background-color: #ddd;
     color: black;
+}
+
+.page-title {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: -1px; /* To avoid a small gap between nav and title */
+    font-size: 1.5em;
 }
 
 .container {
