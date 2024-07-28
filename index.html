@@ -4,62 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MA Thesis - Audio Files</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            padding: 20px;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
-        }
-        .audio-section {
-            margin: 20px 0;
-        }
-        .audio-section h3 {
-            margin-bottom: 10px;
-        }
-        .audio-section audio {
-            width: 100%;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>MA Thesis - Audio Files Music Gen</h1>
+        <h1>MA Thesis - Audio Files</h1>
     </header>
 
-    <section class="audio-section">
-        <h2>Alice in Wonderland Chapter 1 </h2>
-        <p id="description1"> Airy, lilting melodies with gentle hums and soft instrumental whispers.</p>
-        <audio controls>
-            <source src="audio/alice_in_wonderland_chapter_1_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-    </section>
+    <div class="container">
+        <section class="audio-section">
+            <h2>Alice in Wonderland - Chapter 1</h2>
+            <p>The first paragraph of Chapter 1: Airy, lilting melodies with gentle hums and soft instrumental whispers.</p>
+            <p>Prompt: write a short, simple sentence that describes music that would fit this excerpt. Do not refer to the excerpt or its contents.</p>
+            <audio controls>
+                <source src="audio/alice_in_wonderland_chapter_1_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
 
-    <section class="audio-section">
-        <p id="description2">A whimsical waltz unfolds with playful piano arpeggios and soaring strings.</p>
-        <audio controls>
-            <source src="audio/alice_in_wonderland_chapter_2_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-    </section>
+        <section class="audio-section">
+            <h2>Alice in Wonderland - Chapter 2</h2>
+            <p>The first paragraph of Chapter 2: A whimsical waltz unfolds with playful piano arpeggios and soaring strings.</p>
+            <p>Prompt: write a short, simple sentence that describes music that would fit this excerpt. Do not refer to the excerpt or its contents.</p>
+            <audio controls>
+                <source src="audio/alice_in_wonderland_chapter_2_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
 
-    <section class="audio-section">
-        <p id="description3">A haunting melody drifts lazily, like misty rain clouds, accompanied by mournful flute whispers and thudding drums that echo the despondency of the soggy scene.</p>
-        <audio controls>
-            <source src="audio/alice_in_wonderland_chapter_3_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
-            Your browser does not support the audio element.
-        </audio>
-    </section>
-
-    <!-- Prompt used for OLLAMA: write a short, simple sentence that describes music that would fit this excerpt. Do not refer to the excerpt or its contents:"-->
-
+        <section class="audio-section">
+            <h2>Alice in Wonderland - Chapter 3</h2>
+            <p>The first paragraph of Chapter 3: A haunting melody drifts lazily, like misty rain clouds, accompanied by mournful flute whispers and thudding drums that echo the despondency of the soggy scene.</p>
+            <p>Prompt: write a short, simple sentence that describes music that would fit this excerpt. Do not refer to the excerpt or its contents.</p>
+            <audio controls>
+                <source src="audio/alice_in_wonderland_chapter_3_bgmus_ollama_first_1_paragraphs.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </div>
 </body>
 </html>
