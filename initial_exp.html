@@ -4,25 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automatically generating music from literary descriptions - Initial Experiments</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .audio-row {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .audio-file {
-            flex: 1;
-            padding: 0 20px; /* Adjust padding as needed */
-        }
-
-        /* Additional styling for responsive behavior */
-        @media (max-width: 600px) {
-            .audio-row {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="inital_styles.css">
 </head>
 <body>
     <header>
@@ -30,34 +12,46 @@
     </header>
 
     <div class="container">
+        <p>All the selected audio samples are generated from the book The Three Taps from Chapter 2.</p>
         <section class="experiment-section">
-            <p>All the selected audio sample are generated from the book The Three Taps from Chapter 2.</p>
             <h2>Experiment 1</h2>
             <p><b>Description:</b> taking 3 nouns, adjectives and verbs or 50 characters.</p>
-            <div class="audio-row">
-                <div class="audio-file">
-                    <p><b>MusicGen</b></p>
-                    <p><b>Prompt 3 nouns:</b> man company way</p>
-                    <audio controls>
-                        <source src="audio_initial_exp/GEN_3nouns_the_three_taps_chapter_2_bgmus_man_company_way.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
-                <div class="audio-file">
-                    <p><b>MusicLDM</b></p>
-                    <audio controls>
-                        <source src="audio_initial_exp/LDM_3nouns_the_three_taps_chapter_2_bgmus_man_company_way.wav" type="audio/wav">
-                        Your browser does not support the audio element.
-                    </audio>
+            <div class="prompt-section">
+                <p><b>Prompt 3 nouns:</b> man company way</p>
+                <div class="audio-row">
+                    <div class="audio-file">
+                        <p><b>MusicGen</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/GEN_3nouns_the_three_taps_chapter_2_bgmus_man_company_way.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="audio-file">
+                        <p><b>MusicLDM</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/LDM_3nouns_the_three_taps_chapter_2_bgmus_man_company_way.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
                 </div>
             </div>
+        </section>
+    </div>
+
             <div class="audio-file">
-                <p><b>MusicGen</b></p>
                 <p><b>Prompt 3 adjectives:</b> own good early</p>
+                <p><b>MusicGen</b></p>
                 <audio controls>
                     <source src="audio_initial_exp/GEN_3adj_the_three_taps_chapter_2_bgmus_own_good_early.wav" type="audio/wav">
                     Your browser does not support the audio element.
                 </audio>
+                <div class="audio-file">
+                    <p><b>MusicLDM</b></p>
+                    <audio controls>
+                        <source src="" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
             <div class="audio-file">
                 <p><b>MusicGen</b></p>
@@ -66,6 +60,13 @@
                     <source src="audio_initial_exp/GEN_3verbs_the_three_taps_chapter_2_bgmus_get_say_know.wav" type="audio/wav">
                     Your browser does not support the audio element.
                 </audio>
+                <div class="audio-file">
+                    <p><b>MusicLDM</b></p>
+                    <audio controls>
+                        <source src="" type="audio/wav">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </div>
             <div class="audio-file">
                 <p><b>MusicGen</b></p>
@@ -74,6 +75,13 @@
                     <source src="audio_initial_exp/GEN_50char_the_three_taps_chapter_2_bgmus_first_50_chars.wav" type="audio/wav">
                     Your browser does not support the audio element.
                 </audio>
+            <div class="audio-file">
+                <p><b>MusicLDM</b></p>
+                <audio controls>
+                    <source src="" type="audio/wav">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
             </div>
         </section>
     </div>
