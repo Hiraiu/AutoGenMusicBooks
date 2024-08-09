@@ -100,3 +100,28 @@ audio {
         margin: 10px auto; /* Less margin for tighter spaces */
     }
 }
+.collapsible {
+    background-color: #7b7b7b;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+
+}

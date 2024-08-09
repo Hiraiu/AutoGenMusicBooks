@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automatically generating music from literary descriptions - Initial Experiments</title>
     <link rel="stylesheet" href="initial_style.css">
+
 </head>
 <body>
     <header>
@@ -19,14 +20,14 @@
     </nav>
 
     <div class="container">
-
-        <!-- Experiment 1 -->
         <h2>First Experiment</h2>
         <section class="experiment-section">
             <h3>All the selected audio samples are generated from the book The Three Taps from Chapter 2.</h3>
             <p><b>Description:</b> taking 3 nouns, adjectives and verbs or 50 characters.</p>
-            <div class="prompt-section">
-                <p><b>Prompt 3 nouns:</b> man company way</p>
+
+            <!-- Collapsible for Prompt 3 Nouns -->
+            <button class="collapsible">Prompt 3 nouns: man company way</button>
+            <div class="content">
                 <div class="audio-row">
                     <div class="audio-file">
                         <p><b>MusicGen</b></p>
@@ -43,8 +44,11 @@
                         </audio>
                     </div>
                 </div>
+            </div>
 
-                <p><b>Prompt 3 adjectives:</b> own good early</p>
+            <!-- Collapsible for Prompt 3 Adjectives -->
+            <button class="collapsible">Prompt 3 adjectives: own good early</button>
+            <div class="content">
                 <div class="audio-row">
                     <div class="audio-file">
                         <p><b>MusicGen</b></p>
@@ -61,8 +65,11 @@
                         </audio>
                     </div>
                 </div>
+            </div>
 
-                <p><b>Prompt 3 verbs:</b> get say know</p>
+            <!-- Collapsible for Prompt 3 Verbs -->
+            <button class="collapsible">Prompt 3 verbs: get say know</button>
+            <div class="content">
                 <div class="audio-row">
                     <div class="audio-file">
                         <p><b>MusicGen</b></p>
@@ -79,8 +86,11 @@
                         </audio>
                     </div>
                 </div>
+            </div>
 
-                <p><b>Prompt 50 characters:</b> first 50 characters from Chapter 2</p>
+            <!-- Collapsible for Prompt 50 Characters -->
+            <button class="collapsible">Prompt 50 characters: I have already mentioned that the Indescribable ke</button>
+            <div class="content">
                 <div class="audio-row">
                     <div class="audio-file">
                         <p><b>MusicGen</b></p>
@@ -99,5 +109,21 @@
                 </div>
             </div>
         </section>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
