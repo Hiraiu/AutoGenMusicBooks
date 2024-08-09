@@ -100,7 +100,7 @@ audio {
         margin: 10px auto; /* Less margin for tighter spaces */
     }
 }
-.collapsible {
+ .collapsible {
     background-color: #7b7b7b;
     color: white;
     cursor: pointer;
@@ -114,8 +114,13 @@ audio {
     text-align: center;
 }
 
-.active, .collapsible:hover {
-    background-color: #555;
+.active {
+    background-color: #527152;
+}
+
+
+.collapsible:hover {
+    background-color: #538251;
 }
 
 .content {
@@ -124,4 +129,4 @@ audio {
     overflow: hidden;
     background-color: #f1f1f1;
 
-}
+} 

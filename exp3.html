@@ -23,18 +23,20 @@
         <h2>Third Experiment</h2>
         <section class="experiment-section">
             <h3>All the selected audio samples are generated from the book The Three Taps from Chapter 2.</h3>
-            <p><b>Description:</b> Passing the previous prompts through Ollama.</p>
+            <p>
+                <strong>Experiment 3a procedure:</strong> Raw inputs (3 adjectives, 3 verbs, 3 nouns, or first 50 characters) were used directly in Ollama to generate initial music models.<br></p>
         
-                <button class="collapsible">Experiment 3a: Base Input Prompts</button>
+                <button class="collapsible">Experiment 3a: Raw input into Ollama</button>
                 <div class="content">
 
-                    <button class="collapsible">Prompt 1</button>
+                    <button class="collapsible">3 nouns</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Hear a man sharing his unique insights about the right way to navigate through a company.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3a_ollama_nouns_the_three_taps_chapter_2_bgmus_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -47,13 +49,16 @@
                             </div>
                         </div>
                     </div>
-                    <button class="collapsible">Prompt 2</button>
+                    <button class="collapsible">3 adjectives </button>
                     <div class="content nested-content">
+                        <p>
+                        <b>Resulting prompt:</b> <br>Start your day right with tips on taking care of yourself early in the morning, for your own good.
+                        </p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3a_ollama_adj_the_three_taps_chapter_2_bgmus_ollama_own_good_early.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -67,13 +72,14 @@
                         </div>
                     </div>
 
-                    <button class="collapsible">Prompt 3</button>
+                    <button class="collapsible">3 verbs prompted</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Discover what you'll get to say, and expand your knowledge with this informative audio!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3a_ollama_verbs_the_three_taps_chapter_2_bgmus_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -87,13 +93,14 @@
                         </div>
                     </div>
                     
-                    <button class="collapsible">Prompt 4</button>
+                    <button class="collapsible">The first 50 characters</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Unveiling the indescribable: Dive deeper into the unexplored!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3a_ollama_50char_the_three_taps_chapter_2_bgmus_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -107,35 +114,18 @@
                         </div>
                     </div>    
                 </div>
-    
-                <button class="collapsible">Experiment 3b: Combined with Music Type</button>
+                <p><strong>Experiment 3b procedure:</strong> Raw inputs were enhanced by adding a musical prefix ("piano music" or "instrumental music") before processing with Ollama.<br></p>
+                <button class="collapsible">Experiment 3b: Musical prefix and raw inputs into Ollama</button>
+
                 <div class="content">
-                    <button class="collapsible">Prompt 1</button>
+                    <button class="collapsible">(instrumental music + 3 nouns) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br>Listen to this captivating instrumental tune, composed by our talented in-house musician at Man Company. Enjoy the musical journey as it guides your way. </p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </div>
-                            <div class="audio-file">
-                                <p><b>MusicLDM</b></p>
-                                <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
-                                    Your browser does not support the audio element.
-                                </audio>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="collapsible">Prompt 2</button>
-                    <div class="content nested-content">
-                        <div class="audio-row">
-                            <div class="audio-file">
-                                <p><b>MusicGen</b></p>
-                                <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_instru_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -149,13 +139,35 @@
                         </div>
                     </div>
 
-                    <button class="collapsible">Prompt 3</button>
+                    <button class="collapsible">(piano music + 3 nouns) + Ollama </button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Listen to the enchanting piano melodies, crafted by our skilled musicians, on your journey with Piano Music Man Company.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="AutoGenMusicBooks/audio_initial_exp/GEN_3b_piano_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                            <div class="audio-file">
+                                <p><b>MusicLDM</b></p>
+                                <audio controls>
+                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="collapsible">(instrumental music + 3 adjectives) + Ollama</button>
+                    <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Kickstart your day with this uplifting, early-morning instrumental tune - perfect for setting the right mood and getting your own good started!</p>
+                        <div class="audio-row">
+                            <div class="audio-file">
+                                <p><b>MusicGen</b></p>
+                                <audio controls>
+                                    <source src="audio_initial_exp/GEN_3b_instru_adj_the_three_taps_chapter_2_bgmus_intro_ollama_own_good_early.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -169,13 +181,14 @@
                         </div>
                     </div>
                     
-                    <button class="collapsible">Prompt 4</button>
+                    <button class="collapsible">(piano music + 3 adjectives) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Delight in the soothing tones of early piano music, crafted with care and played with passion. It's your very own good melody.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_piano_adj_the_three_taps_chapter_2_bgmus_intro_ollama_own_good_early.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -188,13 +201,14 @@
                             </div>
                         </div>
                     </div>    
-                    <button class="collapsible">Prompt 5</button>
+                    <button class="collapsible">(instrumental music + 3 verbs) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Title: Unspoken Stories - Instrumental Music to Get You Thinking</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_instru_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -207,13 +221,14 @@
                             </div>
                         </div>
                     </div>
-                    <button class="collapsible">Prompt 6</button>
+                    <button class="collapsible">(piano music + 3 verbs) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> Listen in to this soothing piano piece, where you can truly get to know its melody.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_piano_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -227,13 +242,14 @@
                         </div>
                     </div>
 
-                    <button class="collapsible">Prompt 7</button>
+                    <button class="collapsible">(instrumental music + the first 50 characters) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br>Enjoy this new instrumental piece, 'The Indescribable' - an emotive journey through melody and rhythm.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_instru_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -247,13 +263,14 @@
                         </div>
                     </div>
                     
-                    <button class="collapsible">Prompt 8</button>
+                    <button class="collapsible">(piano music + the first 50 characters) + Ollama</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br>Enjoy this piece, an indescribable piano melody... Let it fill your thoughts.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3b_piano_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -268,55 +285,58 @@
                     </div>    
 
                 </div>
-    
-                <button class="collapsible">Experiment 3c: Appended with Music Type</button>
+                <p><strong>Experiment 3c procedure:</strong> Ollama processed raw inputs first; then, "piano music" or "instrumental music" was added to the outputs.<br> </p>
+                <button class="collapsible">Experiment 3c: Raw inputs into Ollama then musical prefix added</button>
                 <div class="content">
-                    <button class="collapsible">Prompt 1</button>
+                    <button class="collapsible">(3 nouns + Ollama) + instrumental music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br>instrumental music A man shares his journey and insights about navigating his career path within the company.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_instru_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_instru_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                         </div>
                     </div>
-                    <button class="collapsible">Prompt 2</button>
+                    <button class="collapsible">(3 nouns + Ollama) + piano music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> piano music A man shares his unique journey and insights within the corporate world.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_piano_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_piano_nouns_the_three_taps_chapter_2_bgmus_intro_ollama_man_company_way.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                         </div>
                     </div>
 
-                    <button class="collapsible">Prompt 3</button>
+                    <button class="collapsible">(3 adj + Ollama) + instrumental music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> instrumental music Start your day right! Learn ways to benefit yourself early on with this informative audio file.</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_instru_adj_the_three_taps_chapter_2_bgmus_intro_ollama_own_good_early.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -330,13 +350,14 @@
                         </div>
                     </div>
                     
-                    <button class="collapsible">Prompt 4</button>
+                    <button class="collapsible">(3 adj + Ollama) + piano music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> piano music Boost your own good early with these helpful tips!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_piano_adj_the_three_taps_chapter_2_bgmus_intro_ollama_own_good_early.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
@@ -349,79 +370,84 @@
                             </div>
                         </div>
                     </div>    
-                    <button class="collapsible">Prompt 5</button>
+                    <button class="collapsible">(3 verbs + Ollama) + instrumental music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> instrumental music Hear this insightful conversation where you'll learn something new and have your say!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_instru_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_instru_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                         </div>
                     </div>
-                    <button class="collapsible">Prompt 6</button>
+                    <button class="collapsible">(3 verbs + Ollama) + piano music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> piano music Listen in as we discuss what you need to 'Know' and how to 'Get' it across clearly when you 'Say' it!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_piano_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_piano_verbs_the_three_taps_chapter_2_bgmus_intro_ollama_get_say_know.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                         </div>
                     </div>
 
-                    <button class="collapsible">Prompt 7</button>
+                    <button class="collapsible">(the first 50 chars + Ollama) + instrumental music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> instrumental music Unveiling the Indescribable: Listen in to learn more!</p>
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_instru_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_instru_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                         </div>
                     </div>
                     
-                    <button class="collapsible">Prompt 8</button>
+                    <button class="collapsible">(the first 50 chars + Ollama) + piano music</button>
                     <div class="content nested-content">
+                        <p><b>Resulting prompt:</b> <br> piano music Unraveling the Indescribable: A deeper dive into the mysteries we've previously discussed.</p>
+                        
                         <div class="audio-row">
                             <div class="audio-file">
                                 <p><b>MusicGen</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_1.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/GEN_3c_piano_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
                             <div class="audio-file">
                                 <p><b>MusicLDM</b></p>
                                 <audio controls>
-                                    <source src="path_to_audio_file_2.wav" type="audio/wav">
+                                    <source src="audio_initial_exp/LDM_3c_piano_50char_the_three_taps_chapter_2_bgmus_intro_ollama_first_50_chars.wav" type="audio/wav">
                                     Your browser does not support the audio element.
                                 </audio>
                             </div>
