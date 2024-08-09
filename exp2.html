@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatically generating music from literary descriptions - Experiment 2</title>
+    <link rel="stylesheet" href="initial_style.css">
+</head>
+<body>
+    <header>
+        <h1>Automatically generating music from literary descriptions</h1>
+        <h2>Initial Experiments</h2>
+    </header>
+
+    <nav>
+        <a href="exp1.html">First Experiment</a>
+        <a href="exp2.html">Second Experiment</a>
+        <a href="exp3.html">Third Experiment</a>
+    </nav>
+
+    <div class="container">
+        <h2>Second Experiment</h2>
+        <section class="experiment-section">
+            <h3>All the selected audio samples are generated from the book The Three Taps from Chapter 2.</h3>
+            <p><b>Description:</b> Using the categories (nouns, verbs, adjectives, 50 chars) introduced by a musical prompt ("piano music" and "instrumental music").</p>
+            <div class="prompt-section">
+                <p><b>Prompt "instrumental music" + 3 adjectives:</b> instrumental music own good early</p>
+                <div class="audio-row">
+                    <div class="audio-file">
+                        <p><b>MusicGen</b></p>
+                        <audio controls>
+                            <source src="" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="audio-file">
+                        <p><b>MusicLDM</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/LDM_instru_adj_the_three_taps_chapter_2_bgmus_intro_own_good_early.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <p><b>Prompt "piano music" + 3 adjectives:</b> piano music own good early</p>
+                <div class="audio-row">
+                    <div class="audio-file">
+                        <p><b>MusicGen</b></p>
+                        <audio controls>
+                            <source src="" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="audio-file">
+                        <p><b>MusicLDM</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/LDM_piano_adj_the_three_taps_chapter_2_bgmus_intro_own_good_early.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <p><b>Prompt "instrumental music" + 3 nouns:</b> </p>
+                <div class="audio-row">
+                    <div class="audio-file">
+                        <p><b>MusicGen</b></p>
+                        <audio controls>
+                            <source src="" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="audio-file">
+                        <p><b>MusicLDM</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/LDM_instru_nouns_the_three_taps_chapter_2_bgmus_intro_man_company_way.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+
+                <p><b>Prompt "piano music" + 3 nouns:</b> piano music own good early</p>
+                <div class="audio-row">
+                    <div class="audio-file">
+                        <p><b>MusicGen</b></p>
+                        <audio controls>
+                            <source src="audio_exp2/GEN_100char.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                    <div class="audio-file">
+                        <p><b>MusicLDM</b></p>
+                        <audio controls>
+                            <source src="audio_initial_exp/LDM_piano_nouns_the_three_taps_chapter_2_bgmus_intro_man_company_way.wav" type="audio/wav">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+                </div>
+                <div class="prompt-section">
+                    <p><b>Prompt "instrumental music" + 3 verbs:</b> piano music own good early</p>
+                    <div class="audio-row">
+                        <div class="audio-file">
+                            <p><b>MusicGen</b></p>
+                            <audio controls>
+                                <source src="audio_exp2/GEN_string_quartet_6verbs.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-file">
+                            <p><b>MusicLDM</b></p>
+                            <audio controls>
+                                <source src="audio_initial_exp/LDM_instru_verbs_the_three_taps_chapter_2_bgmus_intro_get_say_know.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="prompt-section">
+                    <p><b>Prompt "piano music" + 3 verbs:</b> piano music own good early</p>
+                    <div class="audio-row">
+                        <div class="audio-file">
+                            <p><b>MusicGen</b></p>
+                            <audio controls>
+                                <source src="audio_exp2/GEN_orchestral_6adj.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-file">
+                            <p><b>MusicLDM</b></p>
+                            <audio controls>
+                                <source src="audio_initial_exp/LDM_piano_verbs_the_three_taps_chapter_2_bgmus_intro_get_say_know.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="prompt-section">
+                    <p><b>Prompt "instrumental music" + 50 characters:</b> synthesizer music generating unique tones and harmonies to capture the mood of the scene</p>
+                    <div class="audio-row">
+                        <div class="audio-file">
+                            <p><b>MusicGen</b></p>
+                            <audio controls>
+                                <source src="audio_exp2/GEN_synthesizer_100char.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-file">
+                            <p><b>MusicLDM</b></p>
+                            <audio controls>
+                                <source src="audio_initial_exp/LDM_instru_50char_the_three_taps_chapter_2_bgmus_intro_first_50_chars.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="prompt-section">
+                    <p><b>Prompt "piano music" + 50 characters:</b> ambient sounds wind trees water</p>
+                    <div class="audio-row">
+                        <div class="audio-file">
+                            <p><b>MusicGen</b></p>
+                            <audio controls>
+                                <source src="audio_exp2/GEN_ambient_3nouns.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                        <div class="audio-file">
+                            <p><b>MusicLDM</b></p>
+                            <audio controls>
+                                <source src="audio_initial_exp/LDM_piano_50char_the_three_taps_chapter_2_bgmus_intro_first_50_chars.wav" type="audio/wav">
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+    </html>
