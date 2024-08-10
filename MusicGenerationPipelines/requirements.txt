@@ -1,0 +1,15 @@
+accelerate==0.33.0
+beautifulsoup4==4.12.3
+bs4==0.0.2
+diffusers==0.30.0
+EbookLib==0.18
+huggingface-hub==0.24.5
+nltk==3.8.2
+numpy==1.26.4
+scipy==1.14.0
+sympy==1.13.1
+tokenizers==0.19.1
+torch==2.4.0
+tqdm==4.66.5
+transformers==4.44.0
+urllib3==2.2.2
