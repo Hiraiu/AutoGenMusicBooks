@@ -60,73 +60,7 @@ header {
 
 .prompt-section {
     margin-top: 10px;
-}
 
-.audio-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.audio-file {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    background: #f8f8f8; /* Light grey background for each audio file container */
-    border: 1px solid #e1e1e1; /* Subtle border for definition */
-    margin: 5px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Soft shadow for depth */
-}
-
-audio {
-    width: 100%;
-    margin-top: 10px;
-}
-
-/* Hover effects for audio file containers */
-.audio-file:hover {
-    background-color: #e9ecef;
-    cursor: pointer;
-}
-
-@media (max-width: 600px) {
-    .audio-row {
-        flex-direction: column;
-    }
-
-    .container, .prompt-section {
-        width: 95%; /* More space utilization on smaller screens */
-        margin: 10px auto; /* Less margin for tighter spaces */
-    }
-}
- .collapsible {
-    background-color: #7b7b7b;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    margin-top: 5px;
-    text-align: center;
-}
-
-.active {
-    background-color: #527152;
 }
 
 
-.collapsible:hover {
-    background-color: #538251;
-}
-
-.content {
-    padding: 0 18px;
-    display: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-
-} 
