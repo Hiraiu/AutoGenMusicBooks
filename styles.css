@@ -84,3 +84,42 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
+
+.container {
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    height: 100vh; /* Makes the container take up the full height of the viewport */
+}
+
+.navigation-list {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    list-style-type: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* Adds space between each link */
+    align-items: center; /* Center the items horizontally */
+}
+
+.navigation-list li {
+    width: 100%; /* Makes sure items take up full container width */
+}
+
+.navigation-list a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+    width: 250px; /* Fixed width for consistency */
+}
+
+.navigation-list a:hover {
+    background-color: #45a049;
+    color: white;
+}
