@@ -17,3 +17,4 @@ It utilizes two models: MusicGen and MusicLDM from the `transformers` to create 
 1. Clone this repository.
 2. Install required Python packages:
    pip install -r requirements.txt
+3. Run Pipeline_MusicLDM_and_MusicGen.py
