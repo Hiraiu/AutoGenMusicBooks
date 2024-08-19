@@ -1,6 +1,6 @@
-from EVALUATION.evaluate_further_experiments import evaluate_further_experiments
-from EVALUATION.evaluate_initial_experiments import evaluate_initial_experiments
-from EVALUATION.compare_text_and_audio_features import evaluate_similarity
+from evaluate_further_experiments import evaluate_further_experiments
+from evaluate_initial_experiments import evaluate_initial_experiments
+from compare_text_and_audio_features import evaluate_similarity
 
 def evaluate(caption_text_flag, char_limit, paragraph_limit, evaluate_further_flag, eval_function, path_to_eval, model):
 
@@ -18,7 +18,7 @@ def evaluate(caption_text_flag, char_limit, paragraph_limit, evaluate_further_fl
         output_file = output_file.replace("evaluate_similarity", "clap")
 
         if evaluate_further_flag:
-            output_file = "EVAL_NEW_FILES/" + output_file
+            output_file = "EVAL_FURTHER/" + output_file
             evaluate_further_experiments(path_to_eval, output_file, caption_text_flag, eval_function, paragraph_limit, char_limit)
 
         else:
@@ -41,13 +41,11 @@ if __name__ == "__main__":
         eval_function = evaluate_similarity
 
         # SPECIFY THE PATH TO THE FILES TO BE EVALUATED
-        path_to_eval = "NEW_FILES_FOR_EVAL"
-
-        model = "MusicGen" # "MusicGen" or "MusicLDM"
-        path_to_eval += "/" + model
+        path_to_eval = "../Generated_Music_directly_from_Epubs/music_from_MusicGenForTori/first_n_paragraphs/1_paragraphs/ollama/other"
+        model = "MusicGen"
         # ------------------------------------------
         # ------------------------------------------
 
-        for model in ["MusicGen", "MusicLDM"]:
-            for caption_text_flag in [False, True]:
-                evaluate(caption_text_flag, char_limit, paragraph_limit, evaluate_further_flag, eval_function, path_to_eval, model)
+
+        for caption_text_flag in [False, True]:
+            evaluate(caption_text_flag, char_limit, paragraph_limit, evaluate_further_flag, eval_function, path_to_eval, model)

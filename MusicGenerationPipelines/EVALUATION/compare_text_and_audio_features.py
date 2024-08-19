@@ -1,5 +1,5 @@
-from EVALUATION.get_audio_features_from_wav import get_audio_features_from_wav
-from EVALUATION.get_text_features import get_text_features
+from get_audio_features_from_wav import get_audio_features_from_wav
+from get_text_features import get_text_features
 import torch
 
 def evaluate_similarity(texts, wav_file):

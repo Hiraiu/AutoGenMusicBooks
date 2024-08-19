@@ -1,17 +1,16 @@
 import pandas as pd
 import os
-from EVALUATION.compare_text_and_audio_features import evaluate_similarity
+from compare_text_and_audio_features import evaluate_similarity
 from ebooklib import epub
 import json
-from Pipeline_MusicLDM import download_book, read_book, is_valid, chapter_to_str
-
 
 
 def get_chapter(book_name, chapter_ind):
     try:
         with open("all_book_chapters_mod.json") as f:
             books = json.load(f)
-        chap = books[book_name][chapter_ind-1]
+        book = books[book_name]
+        chap = book[chapter_ind-1]
         return chap
     except:
         return None
@@ -21,6 +20,15 @@ def get_chapter(book_name, chapter_ind):
 def evaluate_further_experiments(path, output_file, caption_text_flag, eval_func, paragraph_limit=None, chapter_char_limit=None):
 
     # Read in the CSV as a DataFrame
+    # create the folder EVAL_FURTHER/further_experiments.csv
+    if not os.path.exists('EVAL_FURTHER'):
+        os.makedirs('EVAL_FURTHER')
+
+    # create the csv file
+    if not os.path.exists('EVAL_FURTHER/eval_further_experiments.csv'):
+        with open('EVAL_FURTHER/eval_further_experiments.csv', 'w') as f:
+            f.write("")
+
     df = pd.read_csv('EVAL_FURTHER/eval_further_experiments.csv', index_col=0)
 
     # Define the relative path to the "music_from_AudioLDM" folder
@@ -57,8 +65,9 @@ def evaluate_further_experiments(path, output_file, caption_text_flag, eval_func
                             print("\t\t", book_name)
                             print("\t\t", chapter_ind)
                             chapter_text = get_chapter(book_name, chapter_ind)
+
                             if not chapter_text:
-                                print("hi")
+                                print("\t\tchapter text not found")
                                 continue
 
                             if paragraph_limit == 1:

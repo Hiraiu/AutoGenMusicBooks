@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from EVALUATION.compare_text_and_audio_features import evaluate_similarity
+from compare_text_and_audio_features import evaluate_similarity
 import json
 
 def evaluate_initial_experiments(output_file, caption_text_flag, musicgenmodel, eval_func, chapter_char_limit=None):
