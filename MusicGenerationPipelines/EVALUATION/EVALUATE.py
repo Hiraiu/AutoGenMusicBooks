@@ -41,7 +41,9 @@ if __name__ == "__main__":
         eval_function = evaluate_similarity
 
         # SPECIFY THE PATH TO THE FILES TO BE EVALUATED
-        path_to_eval = "../Generated_Music_directly_from_Epubs/music_from_MusicGenForTori/first_n_paragraphs/1_paragraphs/ollama/other"
+        path_to_eval = "../Generated_Music/music_from_MusicGenForTori/first_n_paragraphs/1_paragraphs/ollama/other"
+        #if using the alternate pipeline
+        #path_to_eval = "../Generated_Music_directly_from_Epubs/music_from_MusicGenForTori/first_n_paragraphs/1_paragraphs/ollama/other"
         model = "MusicGen"
         # ------------------------------------------
         # ------------------------------------------
