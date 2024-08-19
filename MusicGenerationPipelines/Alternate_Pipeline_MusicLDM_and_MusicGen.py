@@ -17,6 +17,51 @@ from extract_ADJ_NOUN_pairs import get_most_common_adj_noun_pairs
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 
+def download_book(url, file_name):
+    """
+    Downloads a book from a given URL and saves it to a specified file name.
+    """
+    with urllib.request.urlopen(url) as response:
+        s = response.read()
+    with open(file_name, "wb") as f:
+        f.write(s)
+    return file_name
+
+def read_book(file_name):
+    """
+    Reads an EPUB book from a given file name.
+    """
+    return epub.read_epub(file_name, {"ignore_ncx": True})
+
+def chapter_to_str(chapter):
+    """
+    Converts a chapter object into a string.
+    """
+    soup = BeautifulSoup(chapter.get_body_content(), 'html.parser')
+    text = [para.get_text() for para in soup.find_all('p')]
+    return ' '.join(text)
+
+def is_valid(epub_book):
+    """
+    Validates the structure of an epub book. Checks if the table of content, the spine of the book and stylesheets are present. Ensures that the chapters are not empty.
+    """
+    # If table of contents is missing
+    if not epub_book.toc:
+        print('Table of content is missing')
+        return False
+    # If the spine is missing
+    if not epub_book.spine:
+        print('Spine is missing')
+        return False
+
+    # If chapters are empty
+    for item in epub_book.spine:
+        if isinstance(item, epub.EpubHtml):
+            if not item.content.strip():
+                print(f"Invalid book: Chapter '{item.get_id()}' is empty.")
+                return False
+    return True
+
 
 def start_musicgen(gpu=True):
     """Load musicgen model for text-to-music generation

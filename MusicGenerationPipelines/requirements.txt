@@ -4,7 +4,7 @@ bs4==0.0.2
 diffusers==0.30.0
 EbookLib==0.18
 huggingface-hub==0.24.5
-nltk==3.8.2
+nltk==3.9.1
 numpy==1.26.4
 scipy==1.14.0
 sympy==1.13.1
@@ -13,3 +13,4 @@ torch==2.4.0
 tqdm==4.66.5
 transformers==4.44.0
 urllib3==2.2.2
+ollama==0.3.1
