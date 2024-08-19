@@ -23,5 +23,6 @@ It utilizes two models: MusicGen and MusicLDM from the `transformers` to create 
 6. You will now get new generated music from all the books in a folder named "Generated_Music" in the working directory. Along with the music file, there is also going to be a text file with the prompt used for generation and another text file that contains the paragraph that the promp was based on.
 
 
-## Adding new books to generate music for
-Since the EPUB files format is not always consistent, to add new books the first paragraphs must be added manually in the all_book_chapters_mod.json. Alternatively, if you want to extract the text from the EPUB directly, you can run "Alernate_Pipeline_MusicLDM_Musicgen", but some inconsitencies in the first paragraph extraction might appear depending on the book.
+## Adding new books for music generation 
+Since the EPUB files format is not always consistent, to add new books the first paragraphs must be added manually in the all_book_chapters_mod.json. Alternatively, if you want to extract the first paragraph text from the EPUB directly, you can run "Alernate_Pipeline_MusicLDM_Musicgen", but some inconsitencies in the first paragraph extraction might appear depending on the book. Moreover, the book link must be added in books_lookup.json.
+In the cases in which it cannot extract the first paragraph, it will extract the first 1000 characters and base the prompt on those.

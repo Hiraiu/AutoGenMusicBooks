@@ -101,6 +101,7 @@ def create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params
         music_dir = os.path.join(music_dir, "hardcoded_prompts")
         music_dir = os.path.join(music_dir, folder)
         os.makedirs(music_dir, exist_ok=True)
+
     elif generation_params["adj_flag"] or generation_params["verb_flag"] or generation_params["noun_flag"]:
         POS = "JJ" if generation_params["adj_flag"] else "VB" if generation_params["verb_flag"] else "NN"
         prompt = get_n_most_frequent(paragraph, generation_params["most_frequent_n_words"], POS)
@@ -109,6 +110,7 @@ def create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params
         folder = 'adjectives' if generation_params["adj_flag"] else 'verbs' if generation_params["verb_flag"] else 'nouns'
         music_dir = os.path.join(music_dir, folder)
         os.makedirs(music_dir, exist_ok=True)
+
     elif generation_params["adjnoun_flag"]:
         prompt = get_most_common_adj_noun_pairs(paragraph, generation_params["most_frequent_n_words"])
         specification = prompt.replace(' ', '_')
@@ -116,13 +118,18 @@ def create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params
         folder = "adj_noun_pairs"
         music_dir = os.path.join(music_dir, folder)
         os.makedirs(music_dir, exist_ok=True)
+
     elif generation_params["first_n_paragraphs"] is not None:
         music_dir = os.path.join(music_dir, 'first_n_paragraphs')
         os.makedirs(music_dir, exist_ok=True)
         music_dir = os.path.join(music_dir, str(generation_params["first_n_paragraphs"]) + '_paragraphs')
         os.makedirs(music_dir, exist_ok=True)
-        # the prompt is the paragraph until the first \n
-        prompt = paragraph
+        # the prompt is the paragraph until the nth \n \n
+        if "\n \n" in paragraph:
+            paragraph = paragraph.split('\n \n')
+            prompt = '\n \n'.join(paragraph[:generation_params["first_n_paragraphs"]])
+        else:
+            prompt = paragraph[:1000]
         prompted_paragraph = prompt
         specification = 'first_' + str(generation_params["first_n_paragraphs"]) + '_paragraphs'
     else:
@@ -139,6 +146,7 @@ def create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params
                 prompt = prompt_intro + prompt
             music_dir = os.path.join(music_dir, 'ollama')
             os.makedirs(music_dir, exist_ok=True)
+            print(prompt)
             ollama_prompt = generation_params["ollama_prompt"]
             print()
             print("Ollama is prompted with: ")
@@ -241,29 +249,87 @@ def get_n_most_frequent(text, n, POS):
     return most_common
 
 
-def epub_process(output_file_name, output_dir, generation_params, music_gen):
-    """Process the epub book: download, extract text, and generate music"""
+# def epub_process(output_file_name, output_dir, generation_params, music_gen):
+#     """Process the epub book: download, extract text, and generate music"""
 
-    paragraphs = generation_params["paragraphs"]
+#     paragraphs = generation_params["paragraphs"]
   
+#     book_id = os.path.basename(output_file_name).split('.')[0]
+
+#     # Create directory for music files if it doesn't exist
+#     music_dir = os.path.join(output_dir, 'music_from_MusicGenForTori')
+#     os.makedirs(music_dir, exist_ok=True)
+    
+#     ind = 0
+#     for paragraph in paragraphs:
+#         chapter_id = f"chapter_{ind+1}"
+#         create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params, music_gen)
+#         ind += 1
+    
+
+
+def epub_process(book_url, output_file_name, output_dir, generation_params, music_gen):
+    """Process the epub book: download, extract text, and generate music"""
+    # Download read, and validate the book
+    print("loo")
+    download_book(book_url, output_file_name)
+    print("kjhkj")
+    epub_book = read_book(output_file_name)
+
+    if not is_valid(epub_book):
+        print(f"Invalid EPUB structure for {output_file_name}")
+        return
+    
+    print("ljhgkjshdjkghsjkgh")
+
+    # Extract text from chapters
+    chapters = []
+    skipped = []
+
+    for item in epub_book.spine:
+        if isinstance(item, epub.EpubHtml):
+            chapter_text = chapter_to_str(item)
+            if chapter_text:
+                chapter.append(chapter_text)
+        else:
+            item_id, _ = item  # Unpack the tuple to get the item ID
+            chapter = epub_book.get_item_with_id(item_id)  # Get the actual chapter object
+            if isinstance(chapter, epub.EpubHtml) and "item" in item_id or "ch" in item_id:
+
+                chapter_text = chapter_to_str(chapter)
+
+                if chapter_text != "" and chapter_text is not None:
+                    chapters.append(chapter_text)
+
+            else:
+                skipped.append(item_id)
+    
+    print()
+    print(f"Skipped chapters: {skipped}")
+    print(epub_book.spine)
+    print(f"Considered chapters: first {generation_params['first_n_chapters']} out of total {len(chapters)} chapters")
+
     book_id = os.path.basename(output_file_name).split('.')[0]
 
     # Create directory for music files if it doesn't exist
     music_dir = os.path.join(output_dir, 'music_from_MusicGenForTori')
     os.makedirs(music_dir, exist_ok=True)
-    
-    ind = 0
-    for paragraph in paragraphs:
-        chapter_id = f"chapter_{ind+1}"
-        create_bg_music(paragraph, book_id, chapter_id, music_dir, generation_params, music_gen)
-        ind += 1
-    
+
+    # Generate music for the first few paragraphs (adjust as needed)
+    limit = int(generation_params["first_n_chapters"])
+    for idx, chapter in enumerate(chapters):  # Limiting to first 5 paragraphs for demo
+        if idx == limit:
+            break
+        chapter_id = f"chapter_{idx+1}"
+        create_bg_music(chapter, book_id, chapter_id, music_dir, generation_params, music_gen)
+
 
 def main(adj_flag, verb_flag, noun_flag, adjnoun_flag, most_frequent_n_words, first_n_chars, first_n_chapters, audio_length_in_s, prompt_intro, ollama_prompt, intro_in_ollama, HARDCODED_PROMPT, book, first_n_paragraphs, music_gen):
     # configure the output terminal to suppress warnings
     sys.stderr = None
     book_name = list(book.keys())[0]
-    paragraphs = book[book_name]
+    book_url = list(book.values())[0]
+
 
     generation_params = {
         "adj_flag": adj_flag,
@@ -279,22 +345,18 @@ def main(adj_flag, verb_flag, noun_flag, adjnoun_flag, most_frequent_n_words, fi
         "intro_in_ollama": intro_in_ollama,
         "hardcoded_prompt": HARDCODED_PROMPT,
         "first_n_paragraphs": first_n_paragraphs,
-        "paragraphs": paragraphs
     }
 
     print("hello")
     # Set the directory for saving downloaded books and music files locally
-    books_dir = "./Generated_Music"  
+    books_dir = "./Generated_Music_directly_from_Epubs"  
     os.makedirs(books_dir, exist_ok=True)
     print("hello")
-
-    with open('books_lookup.json', 'r') as file:
-        data = json.load(file)
     
     print("hello")
     output_file_name = os.path.join(books_dir, f'{book_name}.epub')
 
-    epub_process(output_file_name, books_dir, generation_params, music_gen)
+    epub_process(book_url, output_file_name, books_dir, generation_params, music_gen)
 
 
 if __name__ == "__main__":
@@ -316,10 +378,9 @@ if __name__ == "__main__":
     HARDCODED_PROMPT = ""
     
     # books should be a list of all the keys in the books_lookup.json file
-    with open('all_book_chapters_mod.json', 'r') as file:
-        data = json.load(file)
-    booksers = ["the_three_taps", "grimms_fairy_tales", "huckleberry_finn", "jungle_book", "jane_eyre", "Five_weeks_in_the_baloon"]
-    books = {key: value[:5] for key, value in data.items() if key.replace(".epub", "") in booksers}
+    with open('/Users/irina/Downloads/AutoGenMusicBooks/MusicGenerationPipelines/books_lookup.json', 'r') as file:
+        books = json.load(file)
+        print("opened ebooks_lookup.json")
 
 
     first_n_chars = 50
